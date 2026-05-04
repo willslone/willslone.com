@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="system">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exploring 1.2.6 Sign Language (Prerecorded) - Will Slone</title>
+  <meta name="description" content="Sign language is the first language of many Deaf users. This criterion is about meeting them where they are." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,400;0,700;1,400&family=Atkinson+Hyperlegible+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="alternate" type="application/rss+xml" title="Will Slone" href="https://willslone.com/feed.xml" />
+  <script>
+    (function(){
+      try {
+        var t = localStorage.getItem("ws-theme") || "system";
+        document.documentElement.setAttribute("data-theme", t);
+        var dark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        document.documentElement.setAttribute("data-os", dark ? "dark" : "light");
+      } catch(e){}
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#page-heading">Skip to main content</a>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="wordmark" href="../index.html">
+        <span class="dot"></span>
+        <span class="wordmark-stack">
+          <span class="wordmark-name">Will Slone</span>
+          <span class="wordmark-title">Digital Accessibility Specialist</span>
+        </span>
+      </a>
+      <nav class="primary-nav" aria-label="Main">
+        <ul>
+          <li><a href="../index.html" aria-current="page">Writing</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <article class="article">
+      <header class="article-header">
+        <p class="eyebrow"><a href="../index.html" style="text-decoration:none;color:var(--purple)"><span aria-hidden="true">&larr;</span> All writing</a></p>
+        <div class="article-meta" style="margin-top:1rem">
+          <time datetime="2026-05-05">May 5, 2026</time>
+          <span class="dot-sep" aria-hidden="true"></span>
+          <span>7 min read</span>
+        </div>
+        <h1 class="article-title" id="page-heading" tabindex="-1">Exploring 1.2.6 Sign Language (Prerecorded)</h1>
+        <p class="article-deck">Sign language is the first language of many Deaf users. This criterion is about meeting them where they are.</p>
+      </header>
+
+    <nav class="article-toc" aria-labelledby="toc-label">
+      <div class="article-toc-inner">
+        <h2 class="article-toc-label" id="toc-label">In this post</h2>
+        <ol>
+          <li><a href="#h-what-does-1-2-6-require">What does 1.2.6 require?</a></li>
+          <li><a href="#h-who-does-this-help-and-how">Who does this help, and how?</a></li>
+          <li><a href="#h-why-did-this-land-at-aaa">Why did this land at AAA?</a></li>
+          <li><a href="#h-common-pitfalls">Common pitfalls</a></li>
+          <li><a href="#h-how-to-test-it">How to test it</a></li>
+          <li><a href="#h-automated-testing-and-ai">Automated testing and AI</a></li>
+          <li><a href="#h-resources">Resources</a></li>
+        </ol>
+      </div>
+    </nav>
+
+      <div class="article-body">
+        <p><em>Part of the series: <a href="/writing/exploring-wcag-level-aaa-introduction">Exploring WCAG Level AAA</a></em></p>
+<p><strong>The short version:</strong> If your website includes prerecorded video with spoken audio, this criterion requires you to provide sign language interpretation of that audio.</p>
+<h2 id="h-what-does-1-2-6-require" tabindex="-1">What does 1.2.6 require?</h2>
+<p>The official language is brief: &quot;Sign language interpretation is provided for all prerecorded audio content in synchronized media.&quot;</p>
+<p>Let&#39;s unpack that. Synchronized media means video paired with audio, things like tutorials, interviews, webinars, product demos, and marketing videos. If a video on your site has someone speaking, this criterion applies to it.</p>
+<p>What it asks for is a visible sign language interpreter, either built into the video itself or displayed alongside it, signing the audio content in sync with the video. Captions don&#39;t satisfy this requirement. A transcript doesn&#39;t satisfy it either. The criterion specifically calls for sign language interpretation, and nothing else counts.</p>
+<p>It only applies to prerecorded content. Live synchronized media is a different animal, but sign language interpretation is not required for it anywhere in WCAG. And if a video has no spoken audio, such as a background video with only music, this criterion doesn&#39;t apply.</p>
+<h2 id="h-who-does-this-help-and-how" tabindex="-1">Who does this help, and how?</h2>
+<p>This is where things get interesting, and where the point of the criterion is easy to miss.</p>
+<p>The common assumption is that captions solve the accessibility problem for Deaf and hard-of-hearing users. For many users, that&#39;s true. But for a significant portion of the Deaf community, particularly people who are culturally Deaf and grew up using sign language, captions present a real challenge.</p>
+<p>For many culturally Deaf people, a sign language like American Sign Language (ASL) or British Sign Language (BSL) is their first language. Not English. Not whatever spoken language your video uses. Sign language. They learned it first, they think in it, and they communicate most fluently in it.</p>
+<p>Written captions, then, are a second language. Think about the last time you tried to read something in a language you learned as an adult. You probably got the gist, but nuance was harder to catch. Emotion, emphasis, and tone slipped through. Fast-paced dialogue was exhausting to follow. That&#39;s the experience captions can create for someone whose first language is visual and spatial rather than text-based.</p>
+<p>Sign language interpretation changes that. It delivers the same content in a language that feels natural rather than labored. It carries tone, rhythm, and emphasis in ways that text simply can&#39;t.</p>
+<p>One more thing worth knowing: the Deaf community is not monolithic. There&#39;s an important distinction between Deaf (capital D) and deaf (lowercase d). Lowercase &quot;deaf&quot; refers to the audiological condition of hearing loss. Capital &quot;D&quot; Deaf refers to a cultural identity, a community with its own language, history, and traditions. Not every person with hearing loss uses sign language, and not every sign language user identifies as culturally Deaf. This criterion is most significant for people in the capital-D Deaf community for whom sign is their primary language.</p>
+<h2 id="h-why-did-this-land-at-aaa" tabindex="-1">Why did this land at AAA?</h2>
+<p>This is a question worth asking about every AAA criterion, because the answer tells you something useful. I&#39;m not aware of the working group&#39;s reasoning behind individual placement decisions, so what follows is informed interpretation rather than inside knowledge.</p>
+<p>Sign language interpretation is expensive to produce. It requires hiring a qualified interpreter, coordinating the recording or performance, and integrating the result into a video in a way that works. For organizations with large video libraries, the cost adds up fast. That production burden is likely a significant reason this criterion sits at AAA rather than AA.</p>
+<p>It&#39;s also narrow in its applicability. It matters most to users for whom sign is their primary language, which is a smaller population than the broader group of users who benefit from captions. AAA tends to be reserved for criteria where the benefit is real but the applicability is more specific.</p>
+<p>None of that makes it unimportant. For organizations whose audiences include sign language users, such as schools for the Deaf, government agencies serving broad public audiences, and organizations working directly with Deaf communities, this criterion deserves serious attention.</p>
+<h2 id="h-common-pitfalls" tabindex="-1">Common pitfalls</h2>
+<p>A few things trip people up with this criterion.</p>
+<p><strong>Assuming captions are enough.</strong> They&#39;re not, for the reasons above. If your goal is AAA conformance, you need actual sign language interpretation.</p>
+<p><strong>Using the wrong sign language.</strong> Sign languages are not universal. ASL and BSL are mutually unintelligible — a fluent ASL user and a fluent BSL user would struggle to communicate. There are roughly 300 sign languages in the world. If your audience is primarily American, you need ASL. British audience, BSL. Choosing the right language for your audience is part of what makes the interpretation meaningful.</p>
+<p><strong>Interpreter size and visibility.</strong> A postage-stamp-sized interpreter in the corner of a video isn&#39;t sufficient. The interpreter needs to be large enough that viewers can read the signs clearly. If you&#39;re embedding the interpreter directly in the video, think carefully about size and placement from the start. Moving it later means re-editing the video.</p>
+<p><strong>Not verifying the interpretation quality.</strong> Unless you understand sign language yourself, you can&#39;t evaluate whether the interpretation is accurate or culturally appropriate. Testing this criterion properly requires input from someone who actually uses sign language.</p>
+<h2 id="h-how-to-test-it" tabindex="-1">How to test it</h2>
+<p><em>This section is aimed at accessibility professionals performing conformance evaluations.</em></p>
+<p>Testing 1.2.6 is manual. No automated tools can evaluate whether sign language interpretation is present, visible, or accurate.</p>
+<p>Start by identifying every prerecorded video on the page or site that contains synchronized audio. Background videos with no speech, and audio-only content like podcasts, fall outside the scope of this criterion.</p>
+<p>For each applicable video, work through the following checks.</p>
+<h3>Is sign language interpretation present?</h3>
+<p>Play the video and confirm that a sign language interpreter is visible throughout the portions that contain spoken audio. The interpreter may appear embedded in the video frame or in a separate synchronized player alongside it.</p>
+<h3>Is the interpreter large enough to be discernible?</h3>
+<p>The signing needs to be clear enough to read. If the interpreter window is small, check whether the user can enlarge it. Some video players, like Able Player, allow users to resize and reposition the interpreter window. If the interpreter is baked into the video at a fixed size and that size is too small, that&#39;s a failure.</p>
+<h3>Does the sign language content correspond to the audio?</h3>
+<p>This check requires someone who can both hear the audio and understand the sign language being used. If you don&#39;t have that skill yourself, you need a qualified reviewer. A visual scan won&#39;t cut it.</p>
+<h3>Is the sign language appropriate for the audience?</h3>
+<p>Confirm that the sign language matches the expected audience. An ASL interpreter serving a primarily BSL-using audience doesn&#39;t meet the intent of this criterion, even if interpretation is technically present.</p>
+<h3>Expected results</h3>
+<p><strong>Pass:</strong></p>
+<ul>
+<li>A sign language interpreter is visible and in sync with the audio throughout the video.</li>
+<li>The interpreter display is large enough to read clearly, or the user can enlarge it.</li>
+<li>The signed content accurately matches the spoken audio.</li>
+<li>The sign language used is appropriate for the intended audience.</li>
+</ul>
+<p><strong>Fail:</strong></p>
+<ul>
+<li>A video with spoken audio has no sign language interpretation.</li>
+<li>An interpreter is present but too small to read clearly, with no way to enlarge the display.</li>
+<li>The signed content does not accurately reflect the audio.</li>
+<li>The sign language is not appropriate for the audience.</li>
+</ul>
+<h2 id="h-automated-testing-and-ai" tabindex="-1">Automated testing and AI</h2>
+<p>Automated testing tools cannot evaluate this criterion in any meaningful way. No current tool can detect whether a sign language interpreter is present in a video, let alone assess the size, accuracy, or appropriateness of the interpretation.</p>
+<p>Some tools can detect that a video element exists on a page, but that&#39;s the extent of it. The rest is entirely manual.</p>
+<p>AI-assisted testing doesn&#39;t meaningfully change this picture yet. Video analysis tools have made progress on tasks like object detection and transcription, but evaluating sign language interpretation for accuracy and cultural appropriateness requires deep linguistic and cultural knowledge that current AI tools don&#39;t reliably provide. This is an area to watch, but for now, human review is the only option.</p>
+<h2 id="h-resources" tabindex="-1">Resources</h2>
+<ul>
+<li><a href="https://www.w3.org/WAI/WCAG22/Understanding/sign-language-prerecorded.html">WCAG Understanding 1.2.6</a></li>
+<li><a href="https://www.w3.org/WAI/WCAG22/quickref/#sign-language-prerecorded">WCAG Techniques for 1.2.6</a></li>
+<li><a href="https://ableplayer.github.io/ableplayer/">Able Player (accessible video player with sign language support)</a></li>
+<li><a href="https://rid.org/">Registry of Interpreters for the Deaf (US)</a></li>
+<li><a href="https://wasli.org/">World Association of Sign Language Interpreters</a></li>
+</ul>
+
+      </div>
+
+      <footer class="article-footer">
+        <div class="author-card">
+          <img class="author-avatar" src="../images/will-slone-profile.jpg" alt="" width="72" height="72">
+          <div>
+            <h2 class="author-name">About Will Slone</h2>
+            <p class="author-bio">Digital Accessibility Specialist who writes about accessibility and UX. He holds the IAAP CPWA and DHS Section 508 Trusted Tester certifications, and is completing a B.S. in UX Design at Western Governors University.</p>
+          </div>
+        </div>
+    <nav class="prev-next" aria-label="More posts">
+      <div class="pn-empty" aria-hidden="true"></div>
+      <a href="exploring-wcag-level-aaa-introduction.html" class="pn-next">
+        <p class="pn-label">Older <span aria-hidden="true">&rarr;</span></p>
+        <p class="pn-title">Exploring WCAG Level AAA: Introduction</p>
+      </a>
+    </nav>
+      </footer>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div class="site-footer-meta">
+        <span>&copy; 2026 Will Slone</span>
+        <span class="dot-sep" aria-hidden="true"></span>
+        <a href="https://willslone.com/feed.xml" class="rss-link"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><circle cx="6.18" cy="17.82" r="2.18"/><path d="M4 4.44v2.83c7.03 0 12.73 5.7 12.73 12.73h2.83c0-8.59-6.97-15.56-15.56-15.56zm0 5.66v2.83c3.9 0 7.07 3.17 7.07 7.07h2.83c0-5.47-4.43-9.9-9.9-9.9z"/></svg> RSS</a>
+      </div>
+      <fieldset class="theme-switcher">
+        <legend>Color scheme:</legend>
+        <div class="options">
+          <input type="radio" name="theme" id="theme-system" value="system" />
+          <label for="theme-system">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="3" width="20" height="14" rx="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+            System
+          </label>
+          <input type="radio" name="theme" id="theme-light" value="light" />
+          <label for="theme-light">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"></circle><line x1="12" y1="2" x2="12" y2="4"></line><line x1="12" y1="20" x2="12" y2="22"></line><line x1="4.93" y1="4.93" x2="6.34" y2="6.34"></line><line x1="17.66" y1="17.66" x2="19.07" y2="19.07"></line><line x1="2" y1="12" x2="4" y2="12"></line><line x1="20" y1="12" x2="22" y2="12"></line><line x1="4.93" y1="19.07" x2="6.34" y2="17.66"></line><line x1="17.66" y1="6.34" x2="19.07" y2="4.93"></line></svg>
+            Light
+          </label>
+          <input type="radio" name="theme" id="theme-dark" value="dark" />
+          <label for="theme-dark">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            Dark
+          </label>
+        </div>
+      </fieldset>
+    </div>
+  </footer>
+  <script src="../theme.js"></script>
+</body>
+</html>
