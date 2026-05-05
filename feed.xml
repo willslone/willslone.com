@@ -5,19 +5,19 @@
     <link>https://willslone.com</link>
     <description>Notes on digital accessibility and UX by Will Slone.</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 05 May 2026 11:47:47 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 05 May 2026 15:51:10 GMT</lastBuildDate>
     <atom:link href="https://willslone.com/feed.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Exploring 1.2.6 Sign Language (Prerecorded)</title>
-      <link>https://willslone.com/writing/exploring-wcag-1-2-6-sign-language-prerecorded.html</link>
-      <guid isPermaLink="true">https://willslone.com/writing/exploring-wcag-1-2-6-sign-language-prerecorded.html</guid>
+      <link>https://willslone.com/writing/exploring-wcag-1-2-6-sign-language-prerecorded/</link>
+      <guid isPermaLink="true">https://willslone.com/writing/exploring-wcag-1-2-6-sign-language-prerecorded/</guid>
       <pubDate>Tue, 05 May 2026 04:00:00 GMT</pubDate>
       <description>Sign language is the first language of many Deaf users. This criterion is about meeting them where they are.</description>
     </item>
     <item>
       <title>Exploring WCAG Level AAA: Introduction</title>
-      <link>https://willslone.com/writing/exploring-wcag-level-aaa-introduction.html</link>
-      <guid isPermaLink="true">https://willslone.com/writing/exploring-wcag-level-aaa-introduction.html</guid>
+      <link>https://willslone.com/writing/exploring-wcag-level-aaa-introduction/</link>
+      <guid isPermaLink="true">https://willslone.com/writing/exploring-wcag-level-aaa-introduction/</guid>
       <pubDate>Mon, 04 May 2026 04:00:00 GMT</pubDate>
       <description>Most accessibility work stops at WCAG Level AA. This series explores what lies beyond it.</description>
     </item>
