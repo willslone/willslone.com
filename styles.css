@@ -576,6 +576,35 @@ h2[tabindex="-1"]:focus-visible {
 }
 
 /* ================================================================
+   PROSE (accessibility, sitemap)
+   ================================================================ */
+.prose {
+  max-width: var(--measure);
+  padding: 2rem 0 3rem;
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+}
+.prose > * + * { margin-top: 1.25rem; }
+.prose h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-top: 2.5rem;
+  letter-spacing: -0.015em;
+}
+.prose h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+}
+.prose ul { list-style: none; padding: 0; }
+.prose ul li { padding: 0.35rem 0; border-bottom: 1px solid var(--border-soft); }
+.prose ul ul { padding-left: 1.5rem; }
+.prose a { color: var(--purple); text-decoration-thickness: 2px; }
+.prose a:hover { background: var(--purple-light); text-decoration: underline; text-decoration-thickness: 2px; }
+
+/* ================================================================
    CONTACT
    ================================================================ */
 .contact-grid {
@@ -634,18 +663,47 @@ h2[tabindex="-1"]:focus-visible {
   max-width: var(--container);
   margin: 0 auto;
   display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  font-size: 0.875rem;
+}
+.site-footer-top {
+  display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
   gap: 1rem;
-  font-size: 0.875rem;
 }
 .site-footer-meta {
   display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.footer-links {
+  list-style: none;
+  display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0;
+  padding: 0;
+  margin: 0;
+}
+.footer-links li {
+  display: flex;
+  align-items: center;
+}
+.footer-links li + li::before {
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  background: currentColor;
+  flex-shrink: 0;
+  margin: 0 0.5rem;
+}
+.footer-copyright {
   color: var(--text-muted);
+  font-size: 0.875rem;
 }
 .dot-sep {
   display: inline-block;
@@ -730,6 +788,7 @@ h2[tabindex="-1"]:focus-visible {
   .article-header, .article-body, .article-footer, .article-toc { padding: 0 1.25rem; }
   .site-footer { padding: 1.25rem; }
   .site-footer-inner { flex-direction: column; align-items: flex-start; }
+  .site-footer-top { flex-direction: column; align-items: flex-start; }
   .prev-next { grid-template-columns: 1fr; }
   .pn-next { text-align: left; }
   .author-card { grid-template-columns: 1fr; }
