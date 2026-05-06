@@ -593,6 +593,7 @@ h2[tabindex="-1"]:focus-visible {
   margin-top: 2.5rem;
   letter-spacing: -0.015em;
 }
+.prose h2:first-child { margin-top: 0; }
 .prose h3 {
   font-size: 1rem;
   font-weight: 700;
