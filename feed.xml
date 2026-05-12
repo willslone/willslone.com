@@ -5,8 +5,15 @@
     <link>https://willslone.com</link>
     <description>Notes on digital accessibility and UX by Will Slone.</description>
     <language>en-us</language>
-    <lastBuildDate>Sun, 10 May 2026 16:23:56 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 12 May 2026 11:31:20 GMT</lastBuildDate>
     <atom:link href="https://willslone.com/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>WCAG Checklist</title>
+      <link>https://willslone.com/writing/wcag-checklist/</link>
+      <guid isPermaLink="true">https://willslone.com/writing/wcag-checklist/</guid>
+      <pubDate>Tue, 12 May 2026 04:00:00 GMT</pubDate>
+      <description>There’s no shortage of WCAG (Web Content Accessibility Guidelines) checklists on the web, but since none of them checked all my boxes, I built my own.</description>
+    </item>
     <item>
       <title>Exploring 1.2.6 Sign Language (Prerecorded)</title>
       <link>https://willslone.com/writing/exploring-wcag-1-2-6-sign-language-prerecorded/</link>
