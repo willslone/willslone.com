@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="system">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exploring 1.2.7 Extended Audio Description (Prerecorded) - Will Slone</title>
+  <meta name="description" content="Sometimes a video moves too fast for audio description to keep up. Extended audio description solves that by hitting pause." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,400;0,700;1,400&family=Atkinson+Hyperlegible+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/svg+xml" href="../../favicon.svg" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="alternate" type="application/rss+xml" title="Will Slone" href="https://willslone.com/feed.xml" />
+  <script>
+    (function(){
+      try {
+        var t = localStorage.getItem("ws-theme") || "system";
+        document.documentElement.setAttribute("data-theme", t);
+        var dark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        document.documentElement.setAttribute("data-os", dark ? "dark" : "light");
+      } catch(e){}
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#page-heading">Skip to main content</a>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="wordmark" href="../../">
+        <span class="dot"></span>
+        <span class="wordmark-stack">
+          <span class="wordmark-name">Will Slone</span>
+          <span class="wordmark-title">Digital Accessibility Specialist</span>
+        </span>
+      </a>
+      <nav class="primary-nav" aria-label="Main">
+        <ul>
+          <li><a href="../../contact/">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <article class="article">
+      <header class="article-header">
+        <p class="eyebrow"><a href="../../"><span aria-hidden="true">&larr;</span> All writing</a></p>
+        <div class="article-meta">
+          <time datetime="2026-05-19">May 19, 2026</time>
+          <span class="dot-sep" aria-hidden="true"></span>
+          <span>10 min read</span>
+        </div>
+        <h1 class="article-title" id="page-heading" tabindex="-1">Exploring 1.2.7 Extended Audio Description (Prerecorded)</h1>
+        <p class="article-deck">Sometimes a video moves too fast for audio description to keep up. Extended audio description solves that by hitting pause.</p>
+      </header>
+
+    <nav class="article-toc" aria-labelledby="toc-label">
+      <div class="article-toc-inner">
+        <h2 class="article-toc-label" id="toc-label">In this post</h2>
+        <ol>
+          <li><a href="#h-what-does-1-2-7-require">What does 1.2.7 require?</a></li>
+          <li><a href="#h-who-does-this-help-and-how">Who does this help, and how?</a></li>
+          <li><a href="#h-why-did-this-land-at-aaa">Why did this land at AAA?</a></li>
+          <li><a href="#h-common-pitfalls">Common pitfalls</a></li>
+          <li><a href="#h-how-to-test-it">How to test it</a></li>
+          <li><a href="#h-automated-testing-and-ai">Automated testing and AI</a></li>
+          <li><a href="#h-resources">Resources</a></li>
+        </ol>
+      </div>
+    </nav>
+
+      <div class="article-body">
+        <p><em>Part of the series: <a href="/writing/exploring-wcag-level-aaa-introduction">Exploring WCAG Level AAA</a></em></p>
+<p><strong>The short version:</strong> When a video’s audio track leaves too little room for audio description, this criterion requires a version of the video that pauses to make space for fuller descriptions.</p>
+<h2 id="h-what-does-1-2-7-require" tabindex="-1">What does 1.2.7 require?</h2>
+<p>The official language: “Where pauses in foreground audio are insufficient to allow audio descriptions to convey the sense of the video, extended audio description is provided for all prerecorded video content in synchronized media.”</p>
+<p>To understand what this is asking for, you need to know where it sits in the WCAG structure. At Level AA, Success Criterion 1.2.5 requires audio description for prerecorded video. Audio description is a narrated track that describes what’s happening on screen, filling the gaps between dialogue and other audio so that blind and low-vision users can follow the visual content.</p>
+<p>Standard audio description works by fitting descriptions into the natural pauses in a video’s audio. When a character finishes speaking and the next one hasn’t started yet, a describer slips in a sentence or two. When the music fades before a scene change, there’s room to say what’s visible.</p>
+<p>That works well enough in a lot of videos. But it breaks down in videos where the audio is dense. Think of a fast-paced documentary where the narrator barely stops. Or a training video where an instructor talks through every step. Or a news segment with almost no silence. The pauses that exist might be two seconds long, barely enough to say “she walks to the window,” let alone describe what she’s doing there and why it matters.</p>
+<p>Extended audio description solves this by pausing the video, delivering a complete description, then resuming playback. It’s a more disruptive technique, but in dense content, it’s the only way to give blind users enough information to follow what’s happening.</p>
+<p>Able Player’s <a href="https://ableplayer.github.io/ableplayer/demos/desc4.html">extended audio description demo</a> shows what this looks like in practice. Toggle the description on and watch what happens to the runtime. The described version is longer than the non-described version, not because anything was added to the video, but because the video keeps stopping to make room for narration. That difference in duration is a useful way to grasp what extended audio description does to a piece of content.</p>
+<p>This criterion applies to the same category of content as 1.2.5: prerecorded synchronized media, meaning video with audio. It doesn’t apply to audio-only content, live video, or video with no speech or meaningful visual content.</p>
+<h2 id="h-who-does-this-help-and-how" tabindex="-1">Who does this help, and how?</h2>
+<p>Extended audio description primarily serves people who are blind or have low vision and rely on audio to understand video content.</p>
+<p>For these users, standard audio description at the AA level makes a real difference. But when that description can’t fit within the available pauses, it either gets cut short or left out. The user follows along, hearing dialogue and ambient sound, but missing the visual thread that ties everything together. They might understand what people are saying without knowing where they are, what they’re looking at, or what’s happening around them.</p>
+<p>That gap can be minor. In a talking-head interview, most of what matters is the speech. But in many videos it’s significant. A training video for a software tool might show a series of clicks and screen changes while the instructor describes what to do next. If the description can’t keep up with the action, the viewer loses the visual scaffolding that makes the instructions meaningful.</p>
+<p>Extended audio description closes that gap. It gives describers the time they need to convey what’s on screen, without compressing everything into two-word fragments.</p>
+<h2 id="h-why-did-this-land-at-aaa" tabindex="-1">Why did this land at AAA?</h2>
+<p><em>I’m not aware of the working group’s reasoning behind individual placement decisions, so what follows is informed interpretation rather than inside knowledge.</em></p>
+<p>The core tension here is between completeness and disruption.</p>
+<p>Standard audio description, which is the AA requirement, is designed to be as unobtrusive as possible. It fits into gaps that already exist in the content. Viewers who don’t need it barely notice it. Extended audio description breaks that model entirely. It stops the video. For sighted viewers watching the same content, that pause is a jarring interruption. For content creators, it raises questions about how to handle the interruption gracefully and how to signal to users what’s happening.</p>
+<p>Production is also more complex. Extended audio description isn’t just a matter of writing a better script. It requires identifying every moment where a description won’t fit, scripting a complete description for each, producing a synchronized version of the video that handles the pause and resume correctly, and testing it to make sure the timing holds up. Not every video player supports this. Not every production pipeline is built for it.</p>
+<p>The result is a technique that serves a real need but asks a lot from content producers, works best in a relatively narrow set of circumstances (dense audio content where visual context matters), and creates a noticeably different viewing experience. Those factors together explain why WCAG places it at AAA.</p>
+<p>That said, there are situations where extended audio description is not optional in any meaningful sense. A training video for a job skill, a government video explaining a legal process, an educational video for a course a student can’t opt out of — for blind users, these videos either work or they don’t. Extended audio description is what makes them work.</p>
+<h2 id="h-common-pitfalls" tabindex="-1">Common pitfalls</h2>
+<p><strong>Assuming 1.2.5 compliance covers 1.2.7.</strong> It doesn’t. 1.2.5 requires that audio description is provided, but not that it’s complete. A video can have a description track that satisfies the AA requirement while still leaving out visual content that didn’t fit within the available pauses. 1.2.7 exists precisely to address that gap, requiring a version of the video that pauses to make room for a fuller description when the audio is too dense to allow one.</p>
+<p><strong>Assuming all videos need extended audio description.</strong> The criterion only triggers when standard audio description is insufficient. Many videos have enough natural pauses that a skilled describer can cover everything without stopping playback. Applying extended audio description to every video adds unnecessary complexity. The question to ask is whether a blind user, relying only on the audio track including the description, would understand what’s happening on screen.</p>
+<p><strong>Player support.</strong> Not all video players handle extended audio description well. The technique requires the player to pause on cue and resume after the description ends. Some players support this natively. Many don’t. If you’re implementing extended audio description, confirm your player handles it before investing time in production.</p>
+<p><strong>Poor description quality.</strong> Extended audio description gives describers more time, but more time doesn’t guarantee better output. A long description that buries the most important visual details under irrelevant ones isn’t useful. The same principles that make standard audio description good — objective, prioritized, well-timed, written in plain language — apply here.</p>
+<p><strong>No way to turn it off.</strong> Extended audio description pauses the video, which can be disorienting for users who don’t need it and aren’t expecting it. Best practice is to offer users a way to switch between the standard version and the extended audio description version, rather than forcing everyone through the same experience.</p>
+<h2 id="h-how-to-test-it" tabindex="-1">How to test it</h2>
+<p><em>This section is aimed at accessibility professionals performing conformance evaluations.</em></p>
+<p>Start by identifying which videos on the page fall within scope. This criterion applies to prerecorded synchronized media, meaning video with spoken audio. Videos with no speech, audio-only content like podcasts, and background videos with only music or ambient sound fall outside the scope of this criterion and don’t require audio description of any kind.</p>
+<h3>Does extended audio description apply?</h3>
+<p>Start by checking whether the video already has standard audio description satisfying 1.2.5. If it doesn’t, the video fails at the AA level and you note that separately.</p>
+<p>If standard audio description is present, watch the video with the description track active and ask: does this description actually convey the sense of the video? Pay attention to moments where visual information seems to be missing or compressed into something too brief to be useful. Listen for descriptions that were clearly cut short. Watch for scenes where something significant happens on screen that the description skips or summarizes inadequately.</p>
+<p>If the description is complete and the visual content is covered, 1.2.7 doesn’t apply. The standard description is sufficient.</p>
+<p>If visual content is missing or inadequately described due to insufficient pauses in the audio, 1.2.7 applies and you move to the next question.</p>
+<h3>Is extended audio description provided?</h3>
+<p>Check whether the page offers a version of the video with extended audio description. This might be a separate version of the video, a player that supports description playback with automatic pause and resume, or a link to an alternative.</p>
+<p>If no extended audio description version exists, that’s a failure.</p>
+<h3>Does the extended audio description version work correctly?</h3>
+<p>Play the extended audio description version and verify the following.</p>
+<h4>Does the video pause when needed?</h4>
+<p>When a description is too long to fit a natural gap, the video should pause automatically to deliver the full description, then resume.</p>
+<h4>Does playback resume cleanly?</h4>
+<p>After each description, the video should pick up where it left off without skipping or overlapping with the next moment of audio.</p>
+<h4>Does the description cover what it needs to?</h4>
+<p>For each moment that required extended description, confirm that the description actually conveys the visual information. This requires a sighted reviewer to watch the original video alongside a blind reviewer or someone who can evaluate the description against the content.</p>
+<h4>Can users choose between versions?</h4>
+<p>If the extended audio description version is the only one available, check whether users who don’t want it can opt out. This isn’t a hard requirement for the criterion, but it’s worth noting as a usability issue.</p>
+<h3>Expected results</h3>
+<h4>Pass</h4>
+<ul>
+<li>The video’s audio track already conveys all meaningful visual content, making audio description unnecessary.</li>
+<li>The video has standard audio description that fully covers all meaningful visual content, making extended audio description unnecessary.</li>
+<li>Visual content could not be conveyed within natural pauses, and an extended audio description version is provided that pauses the video to deliver complete descriptions, then resumes cleanly.</li>
+</ul>
+<h4>Fail</h4>
+<ul>
+<li>A video contains important visual content but has no audio description, and the audio is dense enough that standard description would be insufficient.</li>
+<li>Standard audio description is present but incomplete due to insufficient pauses, and no extended audio description version exists.</li>
+<li>An extended audio description version exists but the video doesn’t pause correctly, or descriptions are cut off, or the resume timing is broken.</li>
+<li>The extended audio description is present but doesn’t actually address the content that was missing from the standard description.</li>
+</ul>
+<h2 id="h-automated-testing-and-ai" tabindex="-1">Automated testing and AI</h2>
+<p>No automated tools test this criterion. Testing requires human judgment throughout: determining whether audio description is needed, evaluating whether standard description is sufficient when it exists, and verifying that an extended version is complete and accurate when one is provided.</p>
+<p>Some automated tools flag missing audio description tracks and can catch failures at 1.2.5. But evaluating description quality, identifying gaps, and assessing whether the visual sense of a video is conveyed through audio alone requires a person who understands both what’s on screen and what the user relying on audio would experience.</p>
+<p>AI-assisted tools are making inroads on audio description generation. Some tools can produce draft descriptions from video content, which can help with production. But generating extended audio description involves understanding pacing, scene structure, and what visual information is actually meaningful, which current tools handle unevenly. A human describer and a human reviewer remain essential.</p>
+<h2 id="h-resources" tabindex="-1">Resources</h2>
+<ul>
+<li><a href="https://www.w3.org/WAI/WCAG22/Understanding/extended-audio-description-prerecorded.html">WCAG Understanding 1.2.7</a></li>
+<li><a href="https://www.w3.org/WAI/WCAG22/quickref/#extended-audio-description-prerecorded">WCAG Techniques for 1.2.7</a></li>
+<li><a href="https://ableplayer.github.io/ableplayer/">Able Player (supports extended audio description)</a></li>
+<li><a href="https://www.acb.org/adp/">Audio Description Project</a></li>
+<li><a href="https://dcmp.org/learn/captioningkey/audio-description">DCMP Audio Description Guidelines</a></li>
+</ul>
+
+      </div>
+
+      <footer class="article-footer">
+        <div class="author-card">
+          <img class="author-avatar" src="../../images/will-slone-profile.jpg" alt="" width="72" height="72">
+          <div>
+            <h2 class="author-name">About Will Slone</h2>
+            <p class="author-bio">Digital Accessibility Specialist who writes about accessibility and UX. He holds the IAAP CPWA and DHS Section 508 Trusted Tester certifications, and is completing a B.S. in UX Design at Western Governors University.</p>
+          </div>
+        </div>
+    <nav class="prev-next" aria-label="More posts">
+      <div class="pn-empty" aria-hidden="true"></div>
+      <a href="../wcag-checklist/" class="pn-next">
+        <p class="pn-label">Older <span aria-hidden="true">&rarr;</span></p>
+        <p class="pn-title">WCAG Checklist</p>
+      </a>
+    </nav>
+      </footer>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div class="site-footer-top">
+        <ul class="footer-links">
+          <li><a href="../../accessibility/">Accessibility</a></li>
+          <li><a href="../../sitemap/">Sitemap</a></li>
+          <li><a href="https://willslone.com/feed.xml" class="rss-link"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><circle cx="6.18" cy="17.82" r="2.18"/><path d="M4 4.44v2.83c7.03 0 12.73 5.7 12.73 12.73h2.83c0-8.59-6.97-15.56-15.56-15.56zm0 5.66v2.83c3.9 0 7.07 3.17 7.07 7.07h2.83c0-5.47-4.43-9.9-9.9-9.9z"/></svg> RSS</a></li>
+        </ul>
+        <fieldset class="theme-switcher">
+          <legend>Color scheme:</legend>
+          <div class="options">
+            <input type="radio" name="theme" id="theme-system" value="system" />
+            <label for="theme-system">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="3" width="20" height="14" rx="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+              System
+            </label>
+            <input type="radio" name="theme" id="theme-light" value="light" />
+            <label for="theme-light">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"></circle><line x1="12" y1="2" x2="12" y2="4"></line><line x1="12" y1="20" x2="12" y2="22"></line><line x1="4.93" y1="4.93" x2="6.34" y2="6.34"></line><line x1="17.66" y1="17.66" x2="19.07" y2="19.07"></line><line x1="2" y1="12" x2="4" y2="12"></line><line x1="20" y1="12" x2="22" y2="12"></line><line x1="4.93" y1="19.07" x2="6.34" y2="17.66"></line><line x1="17.66" y1="6.34" x2="19.07" y2="4.93"></line></svg>
+              Light
+            </label>
+            <input type="radio" name="theme" id="theme-dark" value="dark" />
+            <label for="theme-dark">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+              Dark
+            </label>
+          </div>
+        </fieldset>
+      </div>
+      <p class="footer-copyright">&copy; 2026 Will Slone</p>
+    </div>
+  </footer>
+  <script src="../../theme.js"></script>
+</body>
+</html>

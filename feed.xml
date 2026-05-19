@@ -5,8 +5,15 @@
     <link>https://willslone.com</link>
     <description>Notes on digital accessibility and UX by Will Slone.</description>
     <language>en-us</language>
-    <lastBuildDate>Sat, 16 May 2026 20:03:42 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 19 May 2026 11:57:18 GMT</lastBuildDate>
     <atom:link href="https://willslone.com/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Exploring 1.2.7 Extended Audio Description (Prerecorded)</title>
+      <link>https://willslone.com/writing/exploring-wcag-1-2-7-extended-audio-description-prerecorded/</link>
+      <guid isPermaLink="true">https://willslone.com/writing/exploring-wcag-1-2-7-extended-audio-description-prerecorded/</guid>
+      <pubDate>Tue, 19 May 2026 04:00:00 GMT</pubDate>
+      <description>Sometimes a video moves too fast for audio description to keep up. Extended audio description solves that by hitting pause.</description>
+    </item>
     <item>
       <title>WCAG Checklist</title>
       <link>https://willslone.com/writing/wcag-checklist/</link>
