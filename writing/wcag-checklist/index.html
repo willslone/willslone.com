@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-xMVzEa/wG1OhjZGRuovf8frYEoRohAMJSLRBrKw0zpk='; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com; img-src 'self' data:; form-action 'self';" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com; img-src 'self' data:; form-action 'self';" />
   <meta http-equiv="X-Content-Type-Options" content="nosniff" />
   <title>WCAG Checklist - Will Slone</title>
   <meta name="description" content="There’s no shortage of WCAG (Web Content Accessibility Guidelines) checklists on the web, but since none of them checked all my boxes, I built my own." />
@@ -14,16 +14,7 @@
   <link rel="icon" type="image/svg+xml" href="../../favicon.svg" />
   <link rel="stylesheet" href="../../styles.css" />
   <link rel="alternate" type="application/rss+xml" title="Will Slone" href="https://willslone.com/feed.xml" />
-  <script>
-    (function(){
-      try {
-        var t = localStorage.getItem("ws-theme") || "system";
-        document.documentElement.setAttribute("data-theme", t);
-        var dark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-        document.documentElement.setAttribute("data-os", dark ? "dark" : "light");
-      } catch(e){}
-    })();
-  </script>
+  <script src="../../detect-theme.js"></script>
 </head>
 <body>
   <a class="skip-link" href="#page-heading">Skip to main content</a>
