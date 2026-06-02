@@ -5,8 +5,15 @@
     <link>https://willslone.com</link>
     <description>Notes on digital accessibility and UX by Will Slone.</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 01 Jun 2026 23:16:23 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 02 Jun 2026 00:01:04 GMT</lastBuildDate>
     <atom:link href="https://willslone.com/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Target Size Tester Bookmarklet</title>
+      <link>https://willslone.com/writing/target-size-tester-bookmarklet/</link>
+      <guid isPermaLink="true">https://willslone.com/writing/target-size-tester-bookmarklet/</guid>
+      <pubDate>Mon, 01 Jun 2026 04:00:00 GMT</pubDate>
+      <description>Testing target sizes manually is tedious. I created a bookmarklet to speed it up.</description>
+    </item>
     <item>
       <title>Exploring 1.2.7 Extended Audio Description (Prerecorded)</title>
       <link>https://willslone.com/writing/exploring-1-2-7-extended-audio-description-prerecorded/</link>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="system">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <title>Target Size Tester Bookmarklet - Will Slone</title>
+  <meta name="description" content="Testing target sizes manually is tedious. I created a bookmarklet to speed it up." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,400;0,700;1,400&family=Atkinson+Hyperlegible+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/svg+xml" href="../../favicon.svg" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="alternate" type="application/rss+xml" title="Will Slone" href="https://willslone.com/feed.xml" />
+  <script src="../../detect-theme.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#page-heading">Skip to main content</a>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="wordmark" href="../../">
+        <span class="dot"></span>
+        <span class="wordmark-stack">
+          <span class="wordmark-name">Will Slone</span>
+          <span class="wordmark-title">Digital Accessibility Specialist</span>
+        </span>
+      </a>
+      <nav class="primary-nav" aria-label="Main">
+        <ul>
+          <li><a href="../../resources/">Resources</a></li>
+          <li><a href="../../contact/">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <article class="article">
+      <header class="article-header">
+        <p class="eyebrow"><a href="../../"><span aria-hidden="true">&larr;</span> All writing</a></p>
+        <div class="article-meta">
+          <time datetime="2026-06-01">June 1, 2026</time>
+          <span class="dot-sep" aria-hidden="true"></span>
+          <span>1 min read</span>
+        </div>
+        <h1 class="article-title" id="page-heading" tabindex="-1">Target Size Tester Bookmarklet</h1>
+        <p class="article-deck">Testing target sizes manually is tedious. I created a bookmarklet to speed it up.</p>
+      </header>
+
+
+
+      <div class="article-body">
+        <p>WCAG 2.2 introduced Success Criterion 2.5.8 Target Size (Minimum) (Level AA), which requires the target size of interactive controls to meet a 24×24 CSS pixel minimum, with some exceptions. Success Criterion 2.5.5 Target Size (Enhanced) (Level AAA) raises that bar to 44×44px.</p>
+<p>Testing either criterion by hand means inspecting each target individually — checking dimensions, spacing, and applicable exceptions. That gets old fast.</p>
+<p>I&#39;d been using <a href="https://html5accessibility.com/stuff/2023/08/28/quick-and-very-dirty-target-size-checker/">Steve Faulkner&#39;s target size bookmarklet</a>, which overlays 24px circles on interactive targets and flags overlaps. It&#39;s quick, it&#39;s practical, and it does exactly what it says. If you want something lightweight and no-frills, it&#39;s worth checking out.</p>
+<p>I wanted something that went a little further, so I built my own.</p>
+<p><img src="../../images/target-size-tester.png" alt=""></p>
+<h2 id="h-features" tabindex="-1">Features</h2>
+<ul>
+<li>Color-coded indicators on every detected interactive target, with optional labels</li>
+<li>Switch between Success Criterion 2.5.8 and 2.5.5 mode</li>
+<li>Circle view showing the minimum required size rather than the target&#39;s bounding box</li>
+<li>Manual test cursor — a crosshair sized to the active minimum — for targets the bookmarklet might miss</li>
+<li>Results dialog listing every detected target with its conformance result, dimensions, accessible name, and a button to copy its XPath</li>
+<li>Keyboard shortcuts for refreshing overlays (useful for testing dynamic content like dropdown menus) and hiding the legend panel</li>
+</ul>
+<h2 id="h-where-to-find-it" tabindex="-1">Where to find it</h2>
+<ul>
+<li><a href="https://willslone.github.io/target-size-tester/">Target Size Tester installation and documentation</a></li>
+<li><a href="https://github.com/willslone/target-size-tester">Target Size Tester on GitHub</a></li>
+</ul>
+
+      </div>
+
+      <footer class="article-footer">
+        <div class="author-card">
+          <img class="author-avatar" src="../../images/will-slone-profile.jpg" alt="" width="72" height="72">
+          <div>
+            <h2 class="author-name">About Will Slone</h2>
+            <p class="author-bio">Digital Accessibility Specialist who writes about accessibility and UX. He holds the IAAP CPWA and DHS Section 508 Trusted Tester certifications, and is completing a B.S. in UX Design at Western Governors University.</p>
+          </div>
+        </div>
+    <nav class="prev-next" aria-label="More posts">
+      <div class="pn-empty" aria-hidden="true"></div>
+      <a href="../exploring-1-2-7-extended-audio-description-prerecorded/" class="pn-next">
+        <p class="pn-label">Older <span aria-hidden="true">&rarr;</span></p>
+        <p class="pn-title">Exploring 1.2.7 Extended Audio Description (Prerecorded)</p>
+      </a>
+    </nav>
+      </footer>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div class="site-footer-top">
+        <ul class="footer-links">
+          <li><a href="../../accessibility/">Accessibility</a></li>
+          <li><a href="../../sitemap/">Sitemap</a></li>
+          <li><a href="https://willslone.com/feed.xml" class="rss-link"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><circle cx="6.18" cy="17.82" r="2.18"/><path d="M4 4.44v2.83c7.03 0 12.73 5.7 12.73 12.73h2.83c0-8.59-6.97-15.56-15.56-15.56zm0 5.66v2.83c3.9 0 7.07 3.17 7.07 7.07h2.83c0-5.47-4.43-9.9-9.9-9.9z"/></svg> RSS</a></li>
+        </ul>
+        <fieldset class="theme-switcher">
+          <legend>Color scheme:</legend>
+          <div class="options">
+            <input type="radio" name="theme" id="theme-system" value="system" />
+            <label for="theme-system">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="3" width="20" height="14" rx="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+              System
+            </label>
+            <input type="radio" name="theme" id="theme-light" value="light" />
+            <label for="theme-light">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"></circle><line x1="12" y1="2" x2="12" y2="4"></line><line x1="12" y1="20" x2="12" y2="22"></line><line x1="4.93" y1="4.93" x2="6.34" y2="6.34"></line><line x1="17.66" y1="17.66" x2="19.07" y2="19.07"></line><line x1="2" y1="12" x2="4" y2="12"></line><line x1="20" y1="12" x2="22" y2="12"></line><line x1="4.93" y1="19.07" x2="6.34" y2="17.66"></line><line x1="17.66" y1="6.34" x2="19.07" y2="4.93"></line></svg>
+              Light
+            </label>
+            <input type="radio" name="theme" id="theme-dark" value="dark" />
+            <label for="theme-dark">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+              Dark
+            </label>
+          </div>
+        </fieldset>
+      </div>
+      <p class="footer-copyright">&copy; 2026 Will Slone</p>
+    </div>
+  </footer>
+  <script src="../../theme.js"></script>
+</body>
+</html>

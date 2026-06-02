@@ -417,6 +417,7 @@ h2[tabindex="-1"]:focus-visible {
   line-height: 1.55;
 }
 .article-body pre code { padding: 0; background: transparent; border: none; }
+.article-body img { border: var(--border); }
 .article-body .callout {
   margin: 1.75rem 0;
   padding: 1.25rem 1.5rem;
