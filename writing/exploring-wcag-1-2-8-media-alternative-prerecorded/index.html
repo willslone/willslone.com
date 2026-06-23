@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="system">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <title>Exploring 1.2.8 Media Alternative (Prerecorded) - Will Slone</title>
+  <meta name="description" content="Many people who are deaf-blind can’t reliably read captions or hear audio description, so text is the only way for them to access a video’s content. This criterion is about making sure that access exists." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,400;0,700;1,400&family=Atkinson+Hyperlegible+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/svg+xml" href="../../favicon.svg" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="alternate" type="application/rss+xml" title="Will Slone" href="https://willslone.com/feed.xml" />
+  <script src="../../detect-theme.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#page-heading">Skip to main content</a>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="wordmark" href="../../">
+        <span class="dot"></span>
+        <span class="wordmark-stack">
+          <span class="wordmark-name">Will Slone</span>
+          <span class="wordmark-title">Digital Accessibility Specialist</span>
+        </span>
+      </a>
+      <nav class="primary-nav" aria-label="Main">
+        <ul>
+          <li><a href="../../resources/">Resources</a></li>
+          <li><a href="../../contact/">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <article class="article">
+      <header class="article-header">
+        <p class="eyebrow"><a href="../../"><span aria-hidden="true">&larr;</span> All writing</a></p>
+        <div class="article-meta">
+          <time datetime="2026-06-23">June 23, 2026</time>
+          <span class="dot-sep" aria-hidden="true"></span>
+          <span>8 min read</span>
+        </div>
+        <h1 class="article-title" id="page-heading" tabindex="-1">Exploring 1.2.8 Media Alternative (Prerecorded)</h1>
+        <p class="article-deck">Many people who are deaf-blind can’t reliably read captions or hear audio description, so text is the only way for them to access a video’s content. This criterion is about making sure that access exists.</p>
+      </header>
+
+    <nav class="article-toc" aria-labelledby="toc-label">
+      <div class="article-toc-inner">
+        <h2 class="article-toc-label" id="toc-label">In this post</h2>
+        <ol>
+          <li><a href="#h-what-does-1-2-8-require">What does 1.2.8 require?</a></li>
+          <li><a href="#h-how-1-2-8-fits-with-1-2-3-and-1-2-5">How 1.2.8 fits with 1.2.3 and 1.2.5</a></li>
+          <li><a href="#h-who-does-this-help-and-how">Who does this help, and how?</a></li>
+          <li><a href="#h-why-did-this-land-at-aaa">Why did this land at AAA?</a></li>
+          <li><a href="#h-common-pitfalls">Common pitfalls</a></li>
+          <li><a href="#h-how-to-test-it">How to test it</a></li>
+          <li><a href="#h-automated-testing-and-ai">Automated testing and AI</a></li>
+          <li><a href="#h-resources">Resources</a></li>
+        </ol>
+      </div>
+    </nav>
+
+      <div class="article-body">
+        <p><em>Part of the series: <a href="/writing/exploring-wcag-level-aaa-introduction">Exploring WCAG Level AAA</a></em></p>
+<p><strong>The short version:</strong> This criterion requires a full text alternative for prerecorded video, one that covers the dialogue, the sound effects, and everything happening visually, in the order it happens.</p>
+<h2 id="h-what-does-1-2-8-require" tabindex="-1">What does 1.2.8 require?</h2>
+<p>The official language: “An alternative for time-based media is provided for all prerecorded synchronized media and for all prerecorded video-only media.”</p>
+<p>What it asks for is a single text document that stands in entirely for the video, and for its audio, if it has any. A full text alternative includes everything: every line spoken, every meaningful sound effect, and a complete description of what’s happening on screen, all arranged in the same sequence as the video itself.</p>
+<p>This is a different animal from audio description, even extended audio description. Audio description has to work within the constraints of the video. It narrates over pauses, or it pauses the video to make room, but either way it’s tied to the video’s timeline. A full text alternative has no such constraint. It can describe a scene in as much detail as it needs, because the person reading it isn’t watching anything play out in real time. They’re reading a document.</p>
+<p>If the video includes interaction, like a prompt that says “press now to answer,” the text alternative needs to provide an equivalent way to do that too, typically through a link.</p>
+<h2 id="h-how-1-2-8-fits-with-1-2-3-and-1-2-5" tabindex="-1">How 1.2.8 fits with 1.2.3 and 1.2.5</h2>
+<p>At Level A, 1.2.3 gives you a choice. You can satisfy it with audio description, or with a full text alternative. At Level AA, 1.2.5 narrows that choice. It requires audio description specifically. If you already chose audio description for 1.2.3, you’ve covered 1.2.5 too. If you chose a text alternative instead, you now need to add audio description on top of it.</p>
+<p>1.2.8 narrows things again, but in the other direction. It requires the full text alternative specifically, regardless of which path you took at Level A. If you met 1.2.3 with a text alternative from the start, and you added audio description for 1.2.5, you’ve already met 1.2.8 too. Nothing new to do. But if you met 1.2.3 and 1.2.5 with audio description alone, AAA conformance now asks you to add the text alternative you skipped earlier.</p>
+<h2 id="h-who-does-this-help-and-how" tabindex="-1">Who does this help, and how?</h2>
+<p>The clearest beneficiaries are people who are deaf-blind. Captions don’t help someone who can’t see them. Audio description doesn’t help someone who can’t hear it. A full text alternative sidesteps both problems, because text can reach a deaf-blind user through a refreshable braille display in a way that audio and captions can’t.</p>
+<p>It also helps in less extreme cases. Someone with a cognitive disability might find a video’s pace overwhelming, with action and dialogue arriving faster than they can process. A text alternative lets them set their own pace, reread a passage, or use a screen reader at a speed that works for them. Someone in a low-bandwidth environment, or somewhere they can’t play audio, gets a way to access the content that doesn’t depend on streaming video at all.</p>
+<p>There’s a quieter benefit too. A full text alternative is, among other things, a complete written record of a video’s content. That makes it searchable, indexable, and easy to skim, which is useful well beyond the audience the criterion was written for.</p>
+<h2 id="h-why-did-this-land-at-aaa" tabindex="-1">Why did this land at AAA?</h2>
+<p><em>I’m not aware of the working group’s reasoning behind individual placement decisions, so what follows is informed interpretation rather than inside knowledge.</em></p>
+<p>Writing a full text alternative takes real effort. A captioner transcribes dialogue. A describer narrates around existing gaps. Someone writing a full text alternative has to do both of those jobs and weave them into a single coherent document, deciding what to describe, how much detail to include, and how to sequence it all so it reads cleanly. For a long or visually dense video, that’s a substantial writing task, not a quick add-on, and it’s a production cost that’s unrealistic for many organizations’ budgets.</p>
+<p>The audience this serves most directly, people who are deaf-blind, is also small relative to the audiences for captions or audio description alone. That said, the value isn’t limited to deaf-blind users, and for some organizations the case for doing this work is stronger than the AAA label suggests. A university with instructional video, a government agency publishing public information, or any organization serious about cognitive accessibility has good reason to provide full text alternatives even without a mandate to do so site-wide.</p>
+<h2 id="h-common-pitfalls" tabindex="-1">Common pitfalls</h2>
+<h4>Confusing this with a transcript</h4>
+<p>A standard transcript covers dialogue. It might note an occasional sound effect. It almost never describes what’s happening visually in any depth. A full text alternative needs to cover the visual content as thoroughly as it covers the audio. If your “transcript” only documents what people said, it doesn’t meet this criterion.</p>
+<h4>Confusing this with audio description</h4>
+<p>Audio description and a full text alternative aim at similar information, but they’re different deliverables. One is a narration track timed to a video. The other is a standalone document. Producing one doesn’t automatically give you the other, though the same research and notes often feed both.</p>
+<h4>Skipping video-only content</h4>
+<p>Because 1.2.8 also applies to silent video, it’s easy to overlook content that has no audio to caption or describe in the first place. A wordless product animation or a background video without narration still needs a full text alternative if it conveys meaningful information.</p>
+<h4>Writing a thin description</h4>
+<p>A full text alternative that glosses over visual detail with a line like “the presenter demonstrates the software” defeats the purpose. The standard is closer to a detailed scene description, enough that someone who can’t see or hear the video would understand what happened and why it mattered.</p>
+<h4>Burying the alternative</h4>
+<p>The text alternative should be easy to find from the video itself, typically through a link placed right next to it. An alternative no one can find is functionally the same as having none.</p>
+<h2 id="h-how-to-test-it" tabindex="-1">How to test it</h2>
+<p><em>This section is aimed at accessibility professionals performing conformance evaluations.</em></p>
+<p>Start by identifying every prerecorded video on the page or site. For each video, work through the following checks.</p>
+<h3>Does a full text alternative exist?</h3>
+<p>Look for a link to a text alternative placed near the video. Confirm a document exists and is labeled as an alternative for that specific video.</p>
+<h3>Does the text alternative cover the audio content?</h3>
+<p>Check that the document includes a complete account of spoken dialogue, identifies who’s speaking when it matters, and describes meaningful non-speech sounds like music, laughter, or alarms.</p>
+<h3>Does the text alternative cover the visual content?</h3>
+<p>Watch the video and compare it against the document. Confirm the text describes actions, scene changes, on-screen text, and any other visual information someone would need to follow the video without watching it.</p>
+<h3>Is the sequence right?</h3>
+<p>Confirm the document presents dialogue and visual descriptions in the same order they occur in the video. A reader working through the document from top to bottom should experience the same sequence of events as someone watching the video from start to finish.</p>
+<h3>Does interaction have an equivalent?</h3>
+<p>If the video includes any interactive prompt, confirm the text alternative provides a way to achieve the same outcome, such as a link in place of an on-screen instruction.</p>
+<h3>Expected results</h3>
+<h4>Pass</h4>
+<ul>
+<li>The video has no meaningful content at all, such as a purely decorative background loop, making a text alternative unnecessary.</li>
+<li>A complete text alternative exists and accurately covers all spoken dialogue, meaningful sounds, and visual content in the correct sequence, with hyperlinks or other equivalents that provide parallel functionality for any interaction the video includes.</li>
+</ul>
+<h4>Fail</h4>
+<ul>
+<li>A video with meaningful audio or visual content has no text alternative at all.</li>
+<li>A text alternative exists but doesn’t accurately cover all the meaningful content.</li>
+<li>A text alternative exists but presents events out of sequence.</li>
+<li>The video includes interaction, but the text alternative provides no hyperlinks or other equivalents to provide parallel functionality for it.</li>
+</ul>
+<h2 id="h-automated-testing-and-ai" tabindex="-1">Automated testing and AI</h2>
+<p>Automated tools can sometimes detect whether a video has a linked transcript or text document nearby, often by looking for a media embed paired with specific wording like “transcript” close by in the markup. That narrow pattern match will flag a video with no alternative of any kind, but it just as easily misses a valid one that’s linked through an icon, worded differently, or placed somewhere the heuristic doesn’t check. Even when a tool does find something, it has no way to judge whether the document is complete, accurately sequenced, or detailed enough to substitute for the video. That judgment requires a person to watch the video and read the document side by side.</p>
+<p>AI-assisted drafting is genuinely useful here. Tools that generate transcripts and rough visual descriptions from video can give a writer a solid starting point, cutting down on the time it takes to produce a first draft. But a generated draft still needs a human editor to check accuracy, fill in context an AI tool can miss, and confirm the sequencing reads cleanly as a standalone document.</p>
+<h2 id="h-resources" tabindex="-1">Resources</h2>
+<ul>
+<li><a href="https://www.w3.org/WAI/WCAG22/Understanding/media-alternative-prerecorded.html">WCAG Understanding 1.2.8</a></li>
+<li><a href="https://www.w3.org/WAI/WCAG22/quickref/#media-alternative-prerecorded">WCAG Techniques for 1.2.8</a></li>
+<li><a href="https://www.w3.org/WAI/media/av/">Making Audio and Video Media Accessible</a></li>
+</ul>
+
+      </div>
+
+      <footer class="article-footer">
+        <div class="author-card">
+          <img class="author-avatar" src="../../images/will-slone-profile.jpg" alt="" width="72" height="72">
+          <div>
+            <h2 class="author-name">About Will Slone</h2>
+            <p class="author-bio">Digital Accessibility Specialist who writes about accessibility and UX. He holds the IAAP CPWA and DHS Section 508 Trusted Tester certifications, and is completing a B.S. in UX Design at Western Governors University.</p>
+          </div>
+        </div>
+    <nav class="prev-next" aria-label="More posts">
+      <div class="pn-empty" aria-hidden="true"></div>
+      <a href="../target-size-tester-bookmarklet/" class="pn-next">
+        <p class="pn-label">Older <span aria-hidden="true">&rarr;</span></p>
+        <p class="pn-title">Target Size Tester Bookmarklet</p>
+      </a>
+    </nav>
+      </footer>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div class="site-footer-top">
+        <ul class="footer-links">
+          <li><a href="../../accessibility/">Accessibility</a></li>
+          <li><a href="../../sitemap/">Sitemap</a></li>
+          <li><a href="https://willslone.com/feed.xml" class="rss-link"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><circle cx="6.18" cy="17.82" r="2.18"/><path d="M4 4.44v2.83c7.03 0 12.73 5.7 12.73 12.73h2.83c0-8.59-6.97-15.56-15.56-15.56zm0 5.66v2.83c3.9 0 7.07 3.17 7.07 7.07h2.83c0-5.47-4.43-9.9-9.9-9.9z"/></svg> RSS</a></li>
+        </ul>
+        <fieldset class="theme-switcher">
+          <legend>Color scheme:</legend>
+          <div class="options">
+            <input type="radio" name="theme" id="theme-system" value="system" />
+            <label for="theme-system">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="3" width="20" height="14" rx="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+              System
+            </label>
+            <input type="radio" name="theme" id="theme-light" value="light" />
+            <label for="theme-light">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"></circle><line x1="12" y1="2" x2="12" y2="4"></line><line x1="12" y1="20" x2="12" y2="22"></line><line x1="4.93" y1="4.93" x2="6.34" y2="6.34"></line><line x1="17.66" y1="17.66" x2="19.07" y2="19.07"></line><line x1="2" y1="12" x2="4" y2="12"></line><line x1="20" y1="12" x2="22" y2="12"></line><line x1="4.93" y1="19.07" x2="6.34" y2="17.66"></line><line x1="17.66" y1="6.34" x2="19.07" y2="4.93"></line></svg>
+              Light
+            </label>
+            <input type="radio" name="theme" id="theme-dark" value="dark" />
+            <label for="theme-dark">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+              Dark
+            </label>
+          </div>
+        </fieldset>
+      </div>
+      <p class="footer-copyright">&copy; 2026 Will Slone</p>
+    </div>
+  </footer>
+  <script src="../../theme.js"></script>
+</body>
+</html>
