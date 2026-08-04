@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="system">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <title>Exploring 1.2.9 Audio-only (Live) - Will Slone</title>
+  <meta name="description" content="The moment a live broadcast airs happens once. For someone who can’t hear it, following along as it happens is a different experience than reading about it afterward, and in some situations that difference matters a great deal." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,400;0,700;1,400&family=Atkinson+Hyperlegible+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/svg+xml" href="../../favicon.svg" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="alternate" type="application/rss+xml" title="Will Slone" href="https://willslone.com/feed.xml" />
+  <script src="../../detect-theme.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#page-heading">Skip to main content</a>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="wordmark" href="../../">
+        <span class="dot"></span>
+        <span class="wordmark-stack">
+          <span class="wordmark-name">Will Slone</span>
+          <span class="wordmark-title">Digital Accessibility Specialist</span>
+        </span>
+      </a>
+      <nav class="primary-nav" aria-label="Main">
+        <ul>
+          <li><a href="../../resources/">Resources</a></li>
+          <li><a href="../../contact/">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <article class="article">
+      <header class="article-header">
+        <p class="eyebrow"><a href="../../"><span aria-hidden="true">&larr;</span> All writing</a></p>
+        <div class="article-meta">
+          <time datetime="2026-08-04">August 4, 2026</time>
+          <span class="dot-sep" aria-hidden="true"></span>
+          <span>8 min read</span>
+        </div>
+        <h1 class="article-title" id="page-heading" tabindex="-1">Exploring 1.2.9 Audio-only (Live)</h1>
+        <p class="article-deck">The moment a live broadcast airs happens once. For someone who can’t hear it, following along as it happens is a different experience than reading about it afterward, and in some situations that difference matters a great deal.</p>
+      </header>
+
+    <nav class="article-toc" aria-labelledby="toc-label">
+      <div class="article-toc-inner">
+        <h2 class="article-toc-label" id="toc-label">In this post</h2>
+        <ol>
+          <li><a href="#h-what-does-1-2-9-require">What does 1.2.9 require?</a></li>
+          <li><a href="#h-who-does-this-help-and-how">Who does this help, and how?</a></li>
+          <li><a href="#h-why-did-this-land-at-aaa">Why did this land at AAA?</a></li>
+          <li><a href="#h-common-pitfalls">Common pitfalls</a></li>
+          <li><a href="#h-how-to-test-it">How to test it</a></li>
+          <li><a href="#h-automated-testing-and-ai">Automated testing and AI</a></li>
+          <li><a href="#h-resources">Resources</a></li>
+        </ol>
+      </div>
+    </nav>
+
+      <div class="article-body">
+        <p><em>Part of the series: <a href="/writing/exploring-wcag-level-aaa-introduction">Exploring WCAG Level AAA</a></em></p>
+<p><strong>The short version:</strong> If your site streams live audio with no accompanying video, such as a radio broadcast, a live podcast, or an audio-only webinar, this criterion requires a real-time text alternative for that audio.</p>
+<h2 id="h-what-does-1-2-9-require" tabindex="-1">What does 1.2.9 require?</h2>
+<p>The official language: “An alternative for time-based media that presents equivalent information for live audio-only content is provided.”</p>
+<p>Two words in that sentence do most of the work: live and audio-only. Live means the content is happening in real time. Audio-only means there’s no video track carrying visual information alongside it. A live radio stream, a call-in show, a company’s earnings call, an audio-only webinar: this is the territory 1.2.9 covers.</p>
+<p>The requirement is a text alternative that plays out alongside the audio as the event happens. For content that follows a fixed script, a script published in advance can satisfy the criterion, since the audience can follow along in sync with the broadcast. For anything less predictable, that approach breaks down fast. A real conversation drifts from any script within the first minute. What the criterion calls for in most cases is live captioning: a trained real-time captioner, whether working from a stenotype machine or voice-writing software, converting the audio to text with only a short delay.</p>
+<p>There’s an important boundary here, and the official Understanding document is explicit about it. This criterion targets one-to-many broadcast audio: something going out to an audience with no way to talk back. A video conferencing app that two colleagues use to talk to each other isn’t what 1.2.9 has in mind. The obligation to caption that conversation, if there is one, falls on the people using the tool rather than the platform itself.</p>
+<p>Live video with audio is covered separately, by 1.2.4 Captions (Live), a Level AA requirement. 1.2.9 exists specifically for audio with no video at all.</p>
+<h2 id="h-who-does-this-help-and-how" tabindex="-1">Who does this help, and how?</h2>
+<p>The most direct beneficiaries are people who are deaf or hard of hearing. Live audio-only content gives them nothing to work with unless a text alternative runs alongside it.</p>
+<p>But the benefit reaches further than that. Someone watching a live-captioned audio stream in a noisy office, or in a quiet space where playing audio isn’t an option, gets access they wouldn’t otherwise have. People processing content in a second language often find text easier to follow at speed than spoken audio, especially with unfamiliar accents or fast delivery. And live captions create a byproduct that has value on its own: many organizations turn the caption feed into an archived transcript once the event ends, giving every visitor a searchable record of what was said.</p>
+<p>Think about what a live radio segment or an audio-only town hall demands of a listener. They have to catch information the first time it’s spoken, with no pause button and no way to rewind. For a hearing listener, that’s a minor inconvenience if they miss a word here or there. For someone with no access to the audio at all, it’s the difference between following the event and being shut out of it entirely.</p>
+<h2 id="h-why-did-this-land-at-aaa" tabindex="-1">Why did this land at AAA?</h2>
+<p><em>I’m not aware of the working group’s reasoning behind individual placement decisions, so what follows is informed interpretation rather than inside knowledge.</em></p>
+<p>Real-time captioning is a different kind of undertaking than captioning a video you can edit before it airs. It requires a trained operator, standing by, listening and typing at the pace of live speech, synchronized with the event as it happens. A prerecorded video can be captioned at any point before publishing, on whatever schedule works. A daily radio show has no such flexibility: someone has to caption it live, in real time, every single day it airs.</p>
+<p>The infrastructure requirement compounds the problem. The stream itself has to be built to carry a synchronized text channel alongside the audio, and the player on the receiving end has to display it. Not every streaming setup was built with that in mind, and retrofitting one can mean real engineering work.</p>
+<p>There’s also a practical gap between what the criterion technically permits and what works in practice. WCAG allows a pre-written script to stand in for live captioning when the content follows one closely, which sounds like an easy way out. In practice, live speech rarely sticks to a script for long, and the moment it drifts, a static script stops being an equivalent alternative. Only real-time captioning holds up regardless of what gets said.</p>
+<p>Put those pieces together: an ongoing staffing cost, technical infrastructure many organizations don’t already have, and a fallback option that only works in narrow circumstances. That combination puts this criterion out of reach for a lot of organizations trying to hit it across every live broadcast, which is a reasonable explanation for why it sits at AAA. For organizations that broadcast regularly and have an audience that includes deaf or hard-of-hearing listeners, such as public radio, government agencies holding public audio briefings, or educational institutions running live audio lectures, that same infrastructure becomes worth building once and reusing every time.</p>
+<h2 id="h-common-pitfalls" tabindex="-1">Common pitfalls</h2>
+<h4>Confusing this with 1.2.4 Captions (Live)</h4>
+<p>They’re easy to conflate, since both concern live content and both involve a text alternative. But 1.2.4 applies to video paired with audio, while 1.2.9 applies to audio with no video at all, and they sit at different conformance levels.</p>
+<h4>Treating a two-way call as in scope</h4>
+<p>If your platform hosts one-to-one or small-group calls rather than broadcasting to an audience, 1.2.9 likely doesn’t apply, since the criterion targets broadcast content rather than private conversations between individuals.</p>
+<h4>Relying on a script that the speaker doesn’t follow</h4>
+<p>Publishing a script in advance only works if the live audio sticks closely to it. The moment a speaker deviates, whether through an aside, a question from the audience, or an unplanned technical issue, the published script stops matching what’s being said, and listeners relying on it lose the thread.</p>
+<h4>Posting a transcript after the fact instead of captioning live</h4>
+<p>An after-the-event transcript is useful, and it’s worth providing regardless. But it doesn’t meet 1.2.9 on its own. The criterion is about access during the live event itself.</p>
+<h4>Assuming any captioning is good enough</h4>
+<p>Untrained or low-quality captioning that garbles words, drops content, or lags far behind the audio doesn’t meet the intent of this criterion even if a caption feed is technically present. The captions need to track what’s being said with reasonable fidelity and minimal delay.</p>
+<h2 id="h-how-to-test-it" tabindex="-1">How to test it</h2>
+<p><em>This section is aimed at accessibility professionals performing conformance evaluations.</em></p>
+<p>Scope your review to live, audio-only broadcast content: radio streams, live podcasts, audio-only webinars, and similar one-to-many audio events. Live video with audio falls under 1.2.4 instead, and private two-way calls between individuals fall outside 1.2.9 entirely. Once you’ve identified content in scope, work through the following checks during a live broadcast.</p>
+<h3>Is a text alternative provided in real time?</h3>
+<p>Confirm that captions or another synchronized text alternative is available while the audio is playing.</p>
+<h3>Does the text track what’s being said?</h3>
+<p>Compare the captions or script against the audio as it plays. Look for accuracy, reasonable completeness, and a delay short enough that a listener could follow the event in something close to real time.</p>
+<h3>If a script is used instead of live captioning, does the speaker follow it?</h3>
+<p>Where a pre-published script stands in for captioning, listen for deviations. Ad-libs, audience questions, and unplanned interruptions all break the equivalence a static script depends on.</p>
+<h3>Expected results</h3>
+<h4>Pass</h4>
+<ul>
+<li>Live captions or another real-time text alternative run alongside the audio for the full duration of the event.</li>
+<li>Where a script substitutes for captioning, the live audio closely follows that script throughout.</li>
+<li>The text alternative is accurate and reasonably complete.</li>
+</ul>
+<h4>Fail</h4>
+<ul>
+<li>Live audio-only content has no text alternative available during the broadcast.</li>
+<li>A published script is used, but the speaker deviates from it in ways that leave listeners without accurate information.</li>
+<li>Only a transcript published after the event is available, with nothing provided during the live broadcast itself.</li>
+<li>A caption feed exists but is inaccurate or badly delayed.</li>
+</ul>
+<h2 id="h-automated-testing-and-ai" tabindex="-1">Automated testing and AI</h2>
+<p>Automated tools can sometimes detect that an audio stream exists on a page, but they can’t verify whether a live text alternative is running alongside it, let alone judge its accuracy or timing. That judgment call requires a person watching the broadcast as it happens.</p>
+<p>Automatic captioning, the same technology behind YouTube’s auto-generated captions, has improved and shows up in a growing number of streaming platforms. WCAG doesn’t rule out automated captions on principle: what the criterion requires is an accurate alternative, regardless of how it’s produced. In practice, though, uncorrected auto-generated captions rarely clear that bar. Accuracy still varies with accents, background noise, overlapping speakers, and technical vocabulary, and a captioning system that quietly garbles a portion of a broadcast isn’t equivalent to the audio it’s supposed to represent. For content where accuracy matters, whether that’s a government briefing or an educational lecture, a trained human captioner remains the more reliable choice, and any automated system should be spot-checked against what’s being said.</p>
+<h2 id="h-resources" tabindex="-1">Resources</h2>
+<ul>
+<li><a href="https://www.w3.org/WAI/WCAG20/Understanding/audio-only-live">WCAG Understanding 1.2.9</a></li>
+<li><a href="https://www.w3.org/WAI/WCAG22/quickref/#audio-only-live">WCAG Techniques for 1.2.9</a></li>
+<li><a href="https://webaim.org/techniques/captions/realtime">WebAIM: Real-time captioning</a></li>
+</ul>
+
+      </div>
+
+      <footer class="article-footer">
+        <div class="author-card">
+          <img class="author-avatar" src="../../images/will-slone-profile.jpg" alt="" width="72" height="72">
+          <div>
+            <h2 class="author-name">About Will Slone</h2>
+            <p class="author-bio">Digital Accessibility Specialist who writes about accessibility and UX. He holds the IAAP CPWA and DHS Section 508 Trusted Tester certifications, and is completing a B.S. in UX Design at Western Governors University.</p>
+          </div>
+        </div>
+    <nav class="prev-next" aria-label="More posts">
+      <div class="pn-empty" aria-hidden="true"></div>
+      <a href="../exploring-1-2-8-media-alternative-prerecorded/" class="pn-next">
+        <p class="pn-label">Older <span aria-hidden="true">&rarr;</span></p>
+        <p class="pn-title">Exploring 1.2.8 Media Alternative (Prerecorded)</p>
+      </a>
+    </nav>
+      </footer>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div class="site-footer-top">
+        <ul class="footer-links">
+          <li><a href="../../accessibility/">Accessibility</a></li>
+          <li><a href="../../sitemap/">Sitemap</a></li>
+          <li><a href="https://willslone.com/feed.xml" class="rss-link"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><circle cx="6.18" cy="17.82" r="2.18"/><path d="M4 4.44v2.83c7.03 0 12.73 5.7 12.73 12.73h2.83c0-8.59-6.97-15.56-15.56-15.56zm0 5.66v2.83c3.9 0 7.07 3.17 7.07 7.07h2.83c0-5.47-4.43-9.9-9.9-9.9z"/></svg> RSS</a></li>
+        </ul>
+        <fieldset class="theme-switcher">
+          <legend>Color scheme:</legend>
+          <div class="options">
+            <input type="radio" name="theme" id="theme-system" value="system" />
+            <label for="theme-system">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="3" width="20" height="14" rx="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+              System
+            </label>
+            <input type="radio" name="theme" id="theme-light" value="light" />
+            <label for="theme-light">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"></circle><line x1="12" y1="2" x2="12" y2="4"></line><line x1="12" y1="20" x2="12" y2="22"></line><line x1="4.93" y1="4.93" x2="6.34" y2="6.34"></line><line x1="17.66" y1="17.66" x2="19.07" y2="19.07"></line><line x1="2" y1="12" x2="4" y2="12"></line><line x1="20" y1="12" x2="22" y2="12"></line><line x1="4.93" y1="19.07" x2="6.34" y2="17.66"></line><line x1="17.66" y1="6.34" x2="19.07" y2="4.93"></line></svg>
+              Light
+            </label>
+            <input type="radio" name="theme" id="theme-dark" value="dark" />
+            <label for="theme-dark">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+              Dark
+            </label>
+          </div>
+        </fieldset>
+      </div>
+      <p class="footer-copyright">&copy; 2026 Will Slone</p>
+    </div>
+  </footer>
+  <script src="../../theme.js"></script>
+</body>
+</html>

@@ -5,12 +5,19 @@
     <link>https://willslone.com</link>
     <description>Notes on digital accessibility and UX by Will Slone.</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 23 Jun 2026 12:10:07 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 04 Aug 2026 12:31:22 GMT</lastBuildDate>
     <atom:link href="https://willslone.com/feed.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Exploring 1.2.9 Audio-only (Live)</title>
+      <link>https://willslone.com/writing/exploring-1-2-9-audio-only-live/</link>
+      <guid isPermaLink="true">https://willslone.com/writing/exploring-1-2-9-audio-only-live/</guid>
+      <pubDate>Tue, 04 Aug 2026 04:00:00 GMT</pubDate>
+      <description>The moment a live broadcast airs happens once. For someone who can’t hear it, following along as it happens is a different experience than reading about it afterward, and in some situations that difference matters a great deal.</description>
+    </item>
+    <item>
       <title>Exploring 1.2.8 Media Alternative (Prerecorded)</title>
-      <link>https://willslone.com/writing/exploring-wcag-1-2-8-media-alternative-prerecorded/</link>
-      <guid isPermaLink="true">https://willslone.com/writing/exploring-wcag-1-2-8-media-alternative-prerecorded/</guid>
+      <link>https://willslone.com/writing/exploring-1-2-8-media-alternative-prerecorded/</link>
+      <guid isPermaLink="true">https://willslone.com/writing/exploring-1-2-8-media-alternative-prerecorded/</guid>
       <pubDate>Tue, 23 Jun 2026 04:00:00 GMT</pubDate>
       <description>Many people who are deaf-blind can’t reliably read captions or hear audio description, so text is the only way for them to access a video’s content. This criterion is about making sure that access exists.</description>
     </item>
