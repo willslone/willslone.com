@@ -5,8 +5,15 @@
     <link>https://willslone.com</link>
     <description>Notes on digital accessibility and UX by Will Slone.</description>
     <language>en-us</language>
-    <lastBuildDate>Sun, 13 Sep 2026 13:35:50 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 12 Oct 2026 22:29:23 GMT</lastBuildDate>
     <atom:link href="https://willslone.com/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Exploring 1.3.6 Identify Purpose</title>
+      <link>https://willslone.com/writing/exploring-1-3-6-identify-purpose/</link>
+      <guid isPermaLink="true">https://willslone.com/writing/exploring-1-3-6-identify-purpose/</guid>
+      <pubDate>Tue, 13 Oct 2026 04:00:00 GMT</pubDate>
+      <description>What’s familiar to one user isn’t familiar to another, whether it’s a word or an icon. This criterion asks pages to expose a component’s purpose so each user’s own tools can present it in terms they already recognize.</description>
+    </item>
     <item>
       <title>Exploring 1.2.9 Audio-only (Live)</title>
       <link>https://willslone.com/writing/exploring-1-2-9-audio-only-live/</link>

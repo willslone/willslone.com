@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="system">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <title>Exploring 1.3.6 Identify Purpose - Will Slone</title>
+  <meta name="description" content="What’s familiar to one user isn’t familiar to another, whether it’s a word or an icon. This criterion asks pages to expose a component’s purpose so each user’s own tools can present it in terms they already recognize." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,400;0,700;1,400&family=Atkinson+Hyperlegible+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/svg+xml" href="../../favicon.svg" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="alternate" type="application/rss+xml" title="Will Slone" href="https://willslone.com/feed.xml" />
+  <script src="../../detect-theme.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#page-heading">Skip to main content</a>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="wordmark" href="../../">
+        <span class="dot"></span>
+        <span class="wordmark-stack">
+          <span class="wordmark-name">Will Slone</span>
+          <span class="wordmark-title">Digital Accessibility Specialist</span>
+        </span>
+      </a>
+      <nav class="primary-nav" aria-label="Main">
+        <ul>
+          <li><a href="../../resources/">Resources</a></li>
+          <li><a href="../../contact/">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <article class="article">
+      <header class="article-header">
+        <p class="eyebrow"><a href="../../"><span aria-hidden="true">&larr;</span> All writing</a></p>
+        <div class="article-meta">
+          <time datetime="2026-10-13">October 13, 2026</time>
+          <span class="dot-sep" aria-hidden="true"></span>
+          <span>8 min read</span>
+        </div>
+        <h1 class="article-title" id="page-heading" tabindex="-1">Exploring 1.3.6 Identify Purpose</h1>
+        <p class="article-deck">What’s familiar to one user isn’t familiar to another, whether it’s a word or an icon. This criterion asks pages to expose a component’s purpose so each user’s own tools can present it in terms they already recognize.</p>
+      </header>
+
+    <nav class="article-toc" aria-labelledby="toc-label">
+      <div class="article-toc-inner">
+        <h2 class="article-toc-label" id="toc-label">In this post</h2>
+        <ol>
+          <li><a href="#h-what-does-1-3-6-require">What does 1.3.6 require?</a></li>
+          <li><a href="#h-how-1-3-6-relates-to-1-3-5">How 1.3.6 relates to 1.3.5</a></li>
+          <li><a href="#h-who-does-this-help-and-how">Who does this help, and how?</a></li>
+          <li><a href="#h-why-did-this-land-at-aaa">Why did this land at AAA?</a></li>
+          <li><a href="#h-common-pitfalls">Common pitfalls</a></li>
+          <li><a href="#h-how-to-test-it">How to test it</a></li>
+          <li><a href="#h-automated-testing-and-ai">Automated testing and AI</a></li>
+          <li><a href="#h-resources">Resources</a></li>
+        </ol>
+      </div>
+    </nav>
+
+      <div class="article-body">
+        <p><em>Part of the series: <a href="/writing/exploring-wcag-level-aaa-introduction">Exploring WCAG Level AAA</a></em></p>
+<p><strong>The short version:</strong> This criterion asks authors to programmatically expose the purpose of icons, page regions, and UI components, so that assistive technology and other user agents can present them using terms or symbols the user already understands.</p>
+<h2 id="h-what-does-1-3-6-require" tabindex="-1">What does 1.3.6 require?</h2>
+<p>The official language: “In content implemented using markup languages, the purpose of User Interface Components, icons, and regions can be programmatically determined.”</p>
+<p>For regions, meeting this today is straightforward: use landmarks, either through semantic HTML elements like <code>header</code>, <code>nav</code>, <code>main</code>, and <code>footer</code>, or through ARIA landmark roles like <code>role=&quot;search&quot;</code> where HTML has no native element for the job. That’s the one part of this criterion with an established WCAG technique behind it.</p>
+<p>It’s tempting to assume a good accessible name covers 1.3.6 for an icon: a magnifying glass labeled “Search,” a hamburger labeled “Menu.” But what 1.3.6 wants is a way to expose an icon’s underlying concept, so a user agent could swap the icon itself for a different one the user already recognizes. The specification built for that, the W3C’s WAI-Adapt: Symbols Module, tags content with a concept value drawn from a shared registry of symbols used in AAC (augmentative and alternative communication). A user agent can then render a person’s preferred symbol set in place of whatever icon a site shipped with. The module has reached Candidate Recommendation status, further along than most of WAI-Adapt, but the spec’s own text notes that its examples are illustrative because implementations aren’t final.</p>
+<p>The scope covers more than icons already on the page. WCAG’s own supporting materials describe a gamer with a language-processing disability who runs software that turns navigation text into symbols. A plain text link reading “Home” could carry the same kind of concept information as an icon, so that software renders a house symbol in place of the word. Picture or word, the ask is the same: expose the concept behind it so a user agent can act on it.</p>
+<h2 id="h-how-1-3-6-relates-to-1-3-5" tabindex="-1">How 1.3.6 relates to 1.3.5</h2>
+<p>1.3.5 Identify Input Purpose has a narrow scope: input fields that collect information about the user, such as name, email, and address. WCAG defines a fixed list of recognized input purposes, and you meet the criterion by using the matching <code>autocomplete</code> attribute value on each field. It’s a bounded, well-specified requirement with a clear pass condition.</p>
+<p>1.3.6 applies to a much broader set of content: icons, regions, and general UI components. There’s no fixed, normative list of “purposes” to check against. Today, meeting 1.3.6 comes down to landmarks for regions. For icons, the mechanism the criterion points to, exposing a concept a user agent could act on rather than just a label, exists as a specification but not yet as something most sites can implement.</p>
+<h2 id="h-who-does-this-help-and-how" tabindex="-1">Who does this help, and how?</h2>
+<p>The primary beneficiaries are people with cognitive and learning disabilities, particularly people who rely on a limited or specific vocabulary to navigate the web. That includes people who use AAC and are used to a particular set of symbols for concepts like “home,” “help,” or “search.” A site’s own iconography might use a different symbol for the same idea, and that mismatch can leave a person unable to understand the page.</p>
+<p>It also helps people with difficulty concentrating or processing text. A personalization tool could strip a page down to the regions that matter to them. It could hide a promotional sidebar or secondary navigation and leave the main content in view.</p>
+<p>The need varies by person and by moment. The Understanding document puts it plainly: what is familiar to one user may not be familiar to another. The W3C’s Making Content Usable for People with Cognitive and Learning Disabilities adds that similar difficulties can come from situational factors, such as an unfamiliar or noisy environment, and not only from a disability. Programmatic purpose is what makes personalization possible. Without it, a site can only offer one fixed presentation, with symbols and terms baked in at design time, regardless of who’s using it or when.</p>
+<p>Meeting 1.3.6 exposes purpose in the markup. It doesn’t, by itself, change what a user sees. The benefit only shows up once something on the receiving end (a browser extension, an AAC tool, or a personalization agent) reads that markup and acts on it. That ecosystem exists in pieces today. Screen readers already make good use of landmark roles, but personalized symbols and terminology driven by a site’s purpose metadata depend on tools that are still emerging.</p>
+<h2 id="h-why-did-this-land-at-aaa" tabindex="-1">Why did this land at AAA?</h2>
+<p><em>I’m not aware of the working group’s reasoning behind individual placement decisions, so what follows is informed interpretation rather than inside knowledge.</em></p>
+<p>Two things probably kept this out of AA. The first is scope. Unlike 1.3.5, which hands authors a specific list of input purposes and a specific attribute to use, 1.3.6 asks authors to expose purpose across an open-ended category of content (icons, regions, and components) with no normative vocabulary to check conformance against for most of it. That’s much harder to test consistently or require site-wide. The ambiguity shows up in the WCAG working group’s own GitHub repository, where an issue opened in 2023 asks how to test 1.3.6 and what would cause it to fail. It remains open and unresolved.</p>
+<p>The second is the state of the supporting technology, especially for icons. A criterion like this depends on a two-sided ecosystem: authors adding the metadata, and user agents or assistive technology consuming it in a way that benefits the user. A criterion whose central benefit, for icons at least, depends on support that doesn’t exist yet is a reasonable fit for the highest conformance level.</p>
+<h2 id="h-common-pitfalls" tabindex="-1">Common pitfalls</h2>
+<h3>Confusing this with 1.3.5</h3>
+<p>They sound alike and share a theme, but 1.3.5 is a narrow, well-defined Level AA requirement about input fields, while 1.3.6 is a broad Level AAA requirement about icons, regions, and components with no fixed list of purposes. Meeting one doesn’t mean you’ve met the other.</p>
+<h3>Confusing an icon’s accessible name with its purpose</h3>
+<p>Giving an icon a good accessible name is important, but 1.3.6 asks for something else. The name tells a screen reader what the icon means. It gives a user agent nothing to act on if the goal is swapping the icon itself for a different, more familiar one.</p>
+<h3>Assuming the personalization payoff exists today</h3>
+<p>Adding WAI-Adapt attributes to a page right now won’t change the experience for most users, because few tools that consume that metadata are deployed yet. That’s no reason to skip the landmark work that pays off today. Just set expectations with clients or stakeholders about what conforming delivers now and what it’s building toward.</p>
+<h3>Skipping landmarks because a region is visually obvious</h3>
+<p>A header looks like a header and a main content area looks like a main content area, to a sighted user. None of that is available to someone using a screen reader or a personalization tool unless the region has an actual landmark role. Visual clarity doesn’t substitute for programmatic structure.</p>
+<h3>Treating the whole criterion as having a settled pass or fail line</h3>
+<p>Only landmarks have one. WCAG documents no failures for 1.3.6, and ARIA11 is the only sufficient technique with a test procedure.</p>
+<h2 id="h-how-to-test-it" tabindex="-1">How to test it</h2>
+<p><em>This section is aimed at accessibility professionals performing conformance evaluations.</em></p>
+<p>Scope your review to the regions of each page. Landmarks, through the <a href="https://www.w3.org/WAI/WCAG22/Techniques/aria/ARIA11">ARIA11 technique</a>, are the one part of 1.3.6 with an established technique and test procedure.</p>
+<h3>Are page regions marked up with landmarks?</h3>
+<p>Check whether major structural regions (header, navigation, main content, complementary content, footer, and search) use native HTML sectioning elements or the matching ARIA landmark roles. When a page has more than one landmark of the same type, such as two navigation regions, giving each a unique name is a best practice that helps people tell them apart.</p>
+<h3>Expected results</h3>
+<h4>Pass</h4>
+<p>Major structural regions use appropriate landmark roles.</p>
+<h4>Fail</h4>
+<p>Structural regions are built from generic, unmarked containers with no landmark roles.</p>
+<h2 id="h-automated-testing-and-ai" tabindex="-1">Automated testing and AI</h2>
+<p>Automated tools can help find regions that lack landmarks. Tools built on axe-core, such as axe DevTools with best practices turned on, flag page content that sits outside any landmark. That rule is a best practice rather than a WCAG failure condition, so treat its results as a way to locate candidates, then confirm each one by hand.</p>
+<p>What tools can’t judge is whether a region has the right landmark type. A tool can see that a <code>nav</code> element exists. It can’t tell whether that region is the site’s primary navigation or a list of footer links.</p>
+<p>AI-assisted tools can suggest where landmarks belong by analyzing a page’s layout, which can speed up a first pass. Deciding whether a suggested structure matches how the page works for a screen reader user still takes a person.</p>
+<h2 id="h-resources" tabindex="-1">Resources</h2>
+<ul>
+<li><a href="https://www.w3.org/WAI/WCAG22/Understanding/identify-purpose.html">WCAG Understanding 1.3.6</a></li>
+<li><a href="https://www.w3.org/WAI/WCAG22/quickref/#identify-purpose">WCAG Techniques for 1.3.6</a></li>
+<li><a href="https://www.w3.org/WAI/standards-guidelines/wcag/new-in-21/">What’s New in WCAG 2.1 (source of the gamer persona example)</a></li>
+<li><a href="https://www.w3.org/WAI/ARIA/apg/patterns/landmarks/">ARIA Authoring Practices Guide: Landmarks</a></li>
+<li><a href="https://www.w3.org/WAI/adapt/">WAI-Adapt Overview</a></li>
+<li><a href="https://www.w3.org/TR/adapt-symbols/">WAI-Adapt: Symbols Module</a></li>
+<li><a href="https://www.w3.org/TR/coga-usable/">Making Content Usable for People with Cognitive and Learning Disabilities</a></li>
+<li><a href="https://w3c.github.io/coga/issue-papers/#personalization-and-user-preferences">Personalization and User Preferences (COGA issue paper)</a></li>
+<li><a href="https://github.com/ayelet-seeman/coga.personalisation/">The coga.personalisation project (an early working example of adaptive markup)</a></li>
+<li><a href="https://github.com/w3c/wcag/issues/3221">WCAG GitHub issue: How to test 1.3.6 and what would fail it</a></li>
+</ul>
+
+      </div>
+
+      <footer class="article-footer">
+        <div class="author-card">
+          <img class="author-avatar" src="../../images/will-slone-profile.jpg" alt="" width="72" height="72">
+          <div>
+            <h2 class="author-name">About Will Slone</h2>
+            <p class="author-bio">Digital Accessibility Specialist who writes about accessibility and UX. He holds the IAAP CPWA and DHS Section 508 Trusted Tester certifications, and a B.S. in UX Design from Western Governors University.</p>
+          </div>
+        </div>
+    <nav class="prev-next" aria-label="More posts">
+      <div class="pn-empty" aria-hidden="true"></div>
+      <a href="../exploring-1-2-9-audio-only-live/" class="pn-next">
+        <p class="pn-label">Older <span aria-hidden="true">&rarr;</span></p>
+        <p class="pn-title">Exploring 1.2.9 Audio-only (Live)</p>
+      </a>
+    </nav>
+      </footer>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div class="site-footer-top">
+        <ul class="footer-links">
+          <li><a href="../../accessibility/">Accessibility</a></li>
+          <li><a href="../../sitemap/">Sitemap</a></li>
+          <li><a href="https://willslone.com/feed.xml" class="rss-link"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><circle cx="6.18" cy="17.82" r="2.18"/><path d="M4 4.44v2.83c7.03 0 12.73 5.7 12.73 12.73h2.83c0-8.59-6.97-15.56-15.56-15.56zm0 5.66v2.83c3.9 0 7.07 3.17 7.07 7.07h2.83c0-5.47-4.43-9.9-9.9-9.9z"/></svg> RSS</a></li>
+        </ul>
+        <fieldset class="theme-switcher">
+          <legend>Color scheme:</legend>
+          <div class="options">
+            <input type="radio" name="theme" id="theme-system" value="system" />
+            <label for="theme-system">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="3" width="20" height="14" rx="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+              System
+            </label>
+            <input type="radio" name="theme" id="theme-light" value="light" />
+            <label for="theme-light">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"></circle><line x1="12" y1="2" x2="12" y2="4"></line><line x1="12" y1="20" x2="12" y2="22"></line><line x1="4.93" y1="4.93" x2="6.34" y2="6.34"></line><line x1="17.66" y1="17.66" x2="19.07" y2="19.07"></line><line x1="2" y1="12" x2="4" y2="12"></line><line x1="20" y1="12" x2="22" y2="12"></line><line x1="4.93" y1="19.07" x2="6.34" y2="17.66"></line><line x1="17.66" y1="6.34" x2="19.07" y2="4.93"></line></svg>
+              Light
+            </label>
+            <input type="radio" name="theme" id="theme-dark" value="dark" />
+            <label for="theme-dark">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+              Dark
+            </label>
+          </div>
+        </fieldset>
+      </div>
+      <p class="footer-copyright">&copy; 2026 Will Slone</p>
+    </div>
+  </footer>
+  <script src="../../theme.js"></script>
+</body>
+</html>
